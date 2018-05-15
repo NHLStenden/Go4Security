@@ -19,7 +19,7 @@
             <div id="stockchecker">
                 <div class="container" style="height:48px">
                   <div>
-                  <form action="showStock.php" method="post">
+                  <form action="showStock.php" method="get">
                     <label>Check stock of item</label>
                     <select name="id">
                     <?php

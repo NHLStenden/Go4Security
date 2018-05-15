@@ -22,27 +22,31 @@
                     <?php
                     // TODO: items below should be tidied!
                     
-                    if (isset($_POST['id']) && isset($_POST['number'])){
-                      $idProduct      = $_POST['id'];
-                      $itemsRequested = $_POST[ 'number'];
+                    if (isset($_GET['id']) && isset($_GET['number'])){
+                      $idProduct      = $_GET['id'];
+                      $itemsRequested = $_GET['number'];
                       
                       $conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);
                       $query = "SELECT product_id as id, name as n
                                 FROM product
-                               WHERE product_id = '" . $idProduct . "'
-                                 AND nrInStock >= " . $itemsRequested . "
+                               WHERE nrInStock >= " . $itemsRequested . "
+                                 AND product_id = " . $idProduct . "
                               order by name;";
-                      
-                      $stmt = $conn->prepare($query);
-                      $stmt->execute();
-                      
-                      $row = $stmt->fetch();
-                      if (! is_null($row)){
-                        echo "<div>Van het product " . $row['n'] ." is nog voldoende voorraad ($itemsRequested gevraagd) </div>";
-                      }
-                      else{
-                        echo "<div>Van het product kan niet genoeg geleverd worden ($itemsRequested gevraagd) </div>";
+                      try {
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute();
                         
+                        $row = $stmt->fetch();
+
+                        if ($row !== false){
+                          echo "<div>Van het product " . $row['n'] ." is nog voldoende voorraad ($itemsRequested gevraagd) </div>";
+                        }
+                        else{
+                          echo "<div>Van het product kan niet genoeg geleverd worden ($itemsRequested gevraagd) </div>";
+                        }
+                        
+                      } catch (Exception $e) {
+                        echo "<div>SQL Foutmelding: " . $e->getMessage();
                       }
                     }//if $_POST parameters present
                     else{
