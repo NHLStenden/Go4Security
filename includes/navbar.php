@@ -2,7 +2,7 @@
 require_once('basket.php');
 $basket = TotalProducts();
 $log = (isset($_SESSION['user'])) ? '<a href="logout.php" data-toggle="modal" data-target="#login-modal">Logout</a></li>' : '<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>';
-echo '
+?>
 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
     <div class="container">
         <div class="navbar-header">
@@ -17,7 +17,7 @@ echo '
                 </button>
                 <a class="btn btn-default navbar-toggle" href="account.php">
                     <i class="fa fa-shopping-cart"></i>  
-                    <span class="hidden-xs">' . $basket  .  '</span>
+                    <span class="hidden-xs"><?php echo $basket;  ?></span>
                 </a>
             </div>
         </div>
@@ -36,13 +36,14 @@ echo '
                                         <li><a href="index.php">Homepage</a></li>
                                         <li><a href="search.php?cat=all">All Items</a></li>
                                         <li><a href="search.php?cat=Development-boards">Development-boards</a></li>
+                                        <li><a href="stock.php">Stock check</a></li>
                       
                                     </ul>
                                 </div>
                                 <div class="col-sm-3">
                                     <h5>User</h5>
                                     <ul>
-                                        <li>'.$log.'</li>
+                                        <li><?php echo $log; ?></li>
                                         <li><a href="account.php?action=basket">Basket</a></li>
                                         <li><a href="account.php?action=pwchange">Change Password</a></li>
                                     </ul>
@@ -65,7 +66,7 @@ echo '
         <div class="navbar-buttons">
             <div class="navbar-buttons">
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="account.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">' . $basket  .  ' items in cart</span></a>
+                    <a href="account.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"><?php echo $basket; ?>  items in cart</span></a>
                 </div>
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
                     <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
@@ -87,5 +88,3 @@ echo '
         </div>
     </div>
 </div>
-';
-?>
