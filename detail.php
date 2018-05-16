@@ -30,8 +30,8 @@
                         $_SESSION['productid'] = $product_id;
                         $alreadySet = true;
                     }
-                    if(!empty($row[7])){
-                        array_push($reviews,array($row[7],$row[8],$row[9])); //reviews toevoegen aan array
+                    if(!empty($row[8])){
+                        array_push($reviews,array($row[8],$row[9],$row[10])); //reviews toevoegen aan array
                     }
                 }
                 if(count($reviews) > 0){
