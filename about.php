@@ -22,7 +22,8 @@ include("includes/head.php");
                         <h2>About Us</h2>
                         <div align="center">
                             <h3>Who are we?</h3>
-                            <p>We are three Computer science students, striving to give you a great experience on our website.</p>
+                            <p>We are de Hakkenbar! </p>
+							<p>De Hakkenbar are three Computer Science students, striving to give you a great experience on this website.</p>
                             <p>Please explore as much as you want.</p>
 
                             <h3>What do we want?</h3>

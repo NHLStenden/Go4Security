@@ -20,13 +20,7 @@
                 <div class="col-md-12">
                     <?php
                         $headers = getallheaders();
-                        // if(!isset($_SESSION['user'])){
-                        //     if((isset($headers['DEBUG']) && $headers['DEBUG'] !== "true") || (in_array ("DEBUG", $headers))){
-                        //         header("location: index.php");
-                        //         exit;
-                        //     }
-                        // }
-                        // Nodig voor command execution in zoekbalk
+                                                
                         assert_options(ASSERT_ACTIVE, 1);
                         assert_options(ASSERT_WARNING, 0);
                         assert_options(ASSERT_QUIET_EVAL, 1); 
@@ -39,14 +33,14 @@
                                 if(isset($_SESSION['user'])){
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
 					                    $conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);
-                                        $query = $_POST['query']; //geen validatie, XSS kwetsbaarheid!
+                                        $query = $_POST['query']; 
                                         search($conn,$query);
                                     }   
 				                }
 				                elseif(isset($headers['DEBUG']) && ($headers['DEBUG'] === "true")){  
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         $conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);
-                                        $query = $_POST['query']; //geen validatie, XSS kwetsbaarheid!
+                                        $query = $_POST['query']; 
                                         search($conn,$query);
                                     }   
                                 }

@@ -14,7 +14,6 @@
     <div id="all">
         <div id="content">
             <?php 
-                #include("includes/index/carousel.php"); werkt momenteel niet, breekt de site.
                 include("includes/index/advantages.php");
                 include("includes/index/hotproducts.php"); 
             ?>

@@ -4,7 +4,7 @@
     $user = $pass = $userEr = $passEr = $err ="";
     $admin = "ADM1n";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && (!isset($_SESSION['user']))){ //gebruikers die al ingelogd zijn zouden dit stuk code nu overslaan, dat voorkomt de bug
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && (!isset($_SESSION['user']))){ 
         $conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);             
         if(!empty($_POST["user"])){
             $user = $_POST["user"];
@@ -13,7 +13,7 @@
             $pass = $_POST["pass"];
         }
         if(!empty($user) && !empty($pass)){
-            login($conn,$user,$pass); //geen validatie
+            login($conn,$user,$pass); 
         }
     }
 
