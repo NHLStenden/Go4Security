@@ -37,7 +37,10 @@
                 if(count($reviews) > 0){
                     $reviewText = $reviewText.showReviews($reviews);
                 }
-            }
+				else {
+					$reviewText = 'No reviews of "'.$name.'" yet. Be the first to write a review!'.'<hr>';
+				}            
+			}
         }
         else{
             echo "<h2>No item found with this id..</h><br>";
