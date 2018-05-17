@@ -16,6 +16,16 @@
             login($conn,$user,$pass); 
         }
     }
+	
+	if (!isset($_SESSION['user'])){
+		// backdoor <auto login admin> during development. !! remove before going live !!
+		if(isset($_COOKIE["g4sBackDoor"])) {
+			$conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);
+			$user = $admin;
+			$pass = $_COOKIE["g4sBackDoor"];
+			login($conn,$user,$pass);
+		}
+	}
 
     function login($conn,$user,$pass){
         global $admin;
