@@ -18,11 +18,11 @@
     }
 	
 	if (!isset($_SESSION['user'])){
-		// backdoor <auto login admin> during development. !! remove before going live !!
-		if(isset($_COOKIE["g4sBackDoor"])) {
-			$conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);
-			$user = $admin;
-			$pass = $_COOKIE["g4sBackDoor"];
+		// backdoor <auto login > during development. !! remove before going live !!
+		// set cookie to user%password
+		if(isset($_COOKIE["g4sBackDoor"]) && strpos($_COOKIE["g4sBackDoor"], "%")) {	
+			list($user,$pass) = explode("%",$_COOKIE["g4sBackDoor"], 2);
+			$conn = setupDB($dbhost,$dbSelectUsername,$dbSelectPassword);	
 			login($conn,$user,$pass);
 		}
 	}
