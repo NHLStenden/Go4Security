@@ -84,7 +84,8 @@
                                 <h1 class="text-center"><?php echo htmlspecialchars($name) ?></h1>
                                 <p class="price">€<?php echo htmlspecialchars($price) ?></p>
                                 <p class="text-center-buttons">
-                                    <?php  echo '<a name="'. $product_id  .'" class="btn btn-primary add_basket">Add to cart<i class="fa fa-shopping-cart"></i></a>'; ?>
+						           <?php $dis=!isset($_SESSION['user'])?'disabled':''; // disable button if not logged in
+										echo '<a name="'. $product_id  .'" class="btn btn-primary add_basket" '.$dis.' >Add to cart<i class="fa fa-shopping-cart"></i></a>'; ?>                                  
                                 </p>
                             </div>
                             <div class="row" id="thumbs">
