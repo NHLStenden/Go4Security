@@ -24,7 +24,7 @@
                         $name = $row[1];
                         $price = $row[2];
                         $description = (!empty($row[3])? $row[3]: 'No description available.'); //description is niet verplicht
-                        $img = $row[4];
+                        $img = ".".$row[4];
                         $extraDes = (!empty($row[5])? $row[5]: ""); //als er geen 'extraDes' is, moet het een empty string zijn
                         $cat = $row[6];
                         $_SESSION['productid'] = $product_id;
