@@ -66,7 +66,7 @@ $log = (isset($_SESSION['user'])) ? '<a href="logout.php" data-toggle="modal" da
         <div class="navbar-buttons">
             <div class="navbar-buttons">
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="account.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"><?php echo $basket; ?>  items in cart</span></a>
+                    <a href="account.php?action=basket" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"><?php echo $basket; ?>  items in cart</span></a>
                 </div>
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
                     <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
