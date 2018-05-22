@@ -126,13 +126,13 @@
                                             </div>
                                             <div class="back">
                                                 <a href="detail.php?id=' . $prod[0] . '">
-                                                    <img src="'. str_replace(".jpg","_2.jpg",$prod[4]) .'" alt="" class="img-responsive">
+                                                    <img src=".'. str_replace(".jpg","_2.jpg",$prod[4]) .'" alt="" class="img-responsive">
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                     <a href="detail.php?id=' . $prod[0] . '" class="invisible">
-                                        <img src="'. $prod[4] .'" alt="" class="img-responsive">
+                                        <img src=".'. $prod[4] .'" alt="" class="img-responsive">
                                     </a>
                                     <div class="text">
                                         <h3><a href="detail.php?id=' . $prod[0] . '">'. $prod[1] .'</a></h3>
