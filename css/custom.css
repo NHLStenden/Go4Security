@@ -4,3 +4,9 @@
 #logOutMes {
     text-align: center;
 }
+
+img.productimage {
+  max-height:64px;
+  max-width:64px;
+
+  }
