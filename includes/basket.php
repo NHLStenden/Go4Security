@@ -60,7 +60,7 @@ function SearchProduct($query){
 function MakeProduct($amount, $row){
     return '
     <tr>
-        <td><a href="detail.php?id='. $row[0]  .'"><img src="img/'. $row[4] .'" alt="'. $row[1]  .'"></a></td>
+        <td><a href="detail.php?id='. $row[0]  .'"><img src=".'. $row[4] .'" alt="'. $row[1]  .'" class="productimage"></a></td>
         <td><a href="detail.php?id='. $row[0] .'">'. $row[1]  .'</a></td>
         <td style="text-align: center;">'. $amount .'</td>
         <td style="text-align: center;">'. $row[2] .'</td>
