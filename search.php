@@ -121,7 +121,7 @@
                                         <div class="flipper">
                                             <div class="front">
                                                 <a href="detail.php?id=' . $prod[0] . '">
-                                                    <img src="'. $prod[4] .'" alt="" class="img-responsive">
+                                                    <img src=".'. $prod[4] .'" alt="" class="img-responsive">
                                                 </a>
                                             </div>
                                             <div class="back">
