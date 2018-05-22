@@ -26,8 +26,14 @@ function TotalProducts(){
 }
 
 function AddToCart($product_id, $amount) {
+  // MaMo 2018-05-22 : added check if product is already in cart; if not: setup new product-id slot in array and setup nr of products to 1 
+  if (! array_key_exists($product_id, $_SESSION['basket'])) {
+    $_SESSION['basket'][$product_id] = Array('amount' => 1);
+  }
+  else{
     $_SESSION['basket'][$product_id]['amount'] += $amount;
-    return TotalProducts();
+  }
+  return TotalProducts();
 }
 
 function RemoveFromCart($product_id, $amount){
