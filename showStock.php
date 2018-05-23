@@ -32,6 +32,9 @@
                                WHERE nrInStock >= " . $itemsRequested . "
                                  AND product_id = " . $idProduct . "
                               order by name;";
+					  $query2 = "SELECT product_id as id, name as n
+                                FROM product
+                               WHERE product_id = " . $idProduct . ";";
                       try {
                         $stmt = $conn->prepare($query);
                         $stmt->execute();
@@ -42,6 +45,10 @@
                           echo "<div>Van het product " . $row['n'] ." is nog voldoende voorraad ($itemsRequested gevraagd) </div>";
                         }
                         else{
+						// have to fetch product name, since prev query didnt return a row
+						  $stmt = $conn->prepare($query2);
+						  $stmt->execute();
+						  $row = $stmt->fetch();
                           echo "<div>Van het product ". $row['n'] ." is niet voldoende voorraad ($itemsRequested gevraagd) </div>";
                         }
                         
