@@ -42,7 +42,7 @@
                           echo "<div>Van het product " . $row['n'] ." is nog voldoende voorraad ($itemsRequested gevraagd) </div>";
                         }
                         else{
-                          echo "<div>Van het product kan niet genoeg geleverd worden ($itemsRequested gevraagd) </div>";
+                          echo "<div>Van het product ". $row['n'] ." is niet voldoende voorraad ($itemsRequested gevraagd) </div>";
                         }
                         
                       } catch (Exception $e) {
