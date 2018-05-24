@@ -34,7 +34,7 @@
                     ?>
                     </select>
                     <!--  <input  name="number" type="number" value="1" maxlength="2" min="1" size="3" required/>  -->
-                    <input  name="number" type="text" value="1" maxlength="100" size="3" required/>
+                    <input  name="number" type="text" value="1" maxlength="3" size="3" required/>
                     <button type="submit" >Check!</button>
                     </form>
                   </div>
