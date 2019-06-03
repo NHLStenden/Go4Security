@@ -1,4 +1,6 @@
-﻿<?php echo '
+﻿<?php 
+$VERSION = include('version.php');
+    echo '
         <div id="footer" data-animate="fadeInUp">
             <div class="container">     
                 <div class="row">           
@@ -29,7 +31,7 @@
 
                         <h4>Where to find us</h4>
 
-                        <p><strong>NHL/Stenden</strong>
+                        <p><strong>NHL Stenden</strong>
                             <br>Rengerslaan 10
                             <br>Leeuwarden
                             <br>8917 DD
@@ -42,9 +44,16 @@
                         <hr class="hidden-md hidden-lg">
 
                     </div>
+                    <div class="col-md-3 col-sm-8">
+
+                    <h4>Version</h4>
+                    
+                    <p><strong>version</strong>
+                        <br>'.$VERSION['version'].'
+                    </p>
+                </div>                    
                     <!-- /.col-md-3 -->
                 <!-- /.row -->
-
             </div>
 	</div>
 '; ?>
