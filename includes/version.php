@@ -4,6 +4,7 @@ Update this after every change in the code. The version number will show up in t
 (see also: footer.php)
 */
 return [
-    'version' => '2.0.1'
+    'version'   => '2.0.2',
+    'name'      => 'aaisykjen'
 ];
 ?>

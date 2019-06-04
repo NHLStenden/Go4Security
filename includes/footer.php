@@ -49,7 +49,7 @@ $VERSION = include('version.php');
                     <h4>Version</h4>
                     
                     <p><strong>version</strong>
-                        <br>'.$VERSION['version'].'
+                        <br>'.$VERSION['version'].'<br>"'.$VERSION['name'].'"
                     </p>
                 </div>                    
                     <!-- /.col-md-3 -->
